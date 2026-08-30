@@ -11,19 +11,19 @@ body {
     margin: 0;
     padding: 20px;
     min-height: 100vh;
-    background: #ffe5ef;
+    background: linear-gradient(135deg, #ffe1ec, #fff5f8);
     font-family: Arial, sans-serif;
-    color: #3b2630;
+    color: #38252c;
     text-align: center;
 }
 
 .game {
     max-width: 500px;
-    margin: 30px auto;
+    margin: 20px auto;
     background: white;
-    padding: 30px 20px;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    padding: 28px 20px;
+    border-radius: 28px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.15);
 }
 
 .screen {
@@ -45,6 +45,7 @@ body {
 
 h1 {
     font-size: 30px;
+    margin-bottom: 20px;
 }
 
 h2 {
@@ -53,37 +54,49 @@ h2 {
 
 p {
     font-size: 17px;
-    line-height: 1.5;
+    line-height: 1.55;
 }
 
 .progress {
     font-size: 13px;
-    opacity: .5;
+    color: #999;
+    margin-bottom: 15px;
 }
 
 .button {
     display: block;
     width: 85%;
     margin: 15px auto;
-    padding: 16px;
-    background: #ff6f9f;
+    padding: 16px 10px;
+    background: #ff6b9d;
     color: white;
     text-decoration: none;
     border-radius: 18px;
     font-size: 17px;
     font-weight: bold;
+    box-shadow: 0 5px 12px rgba(255,107,157,0.25);
 }
 
 .button:active {
-    transform: scale(.97);
+    transform: scale(0.97);
 }
 
 .photo {
-    background: #f8dce7;
+    margin: 25px auto;
+}
+
+.photo img {
+    width: 100%;
+    max-width: 430px;
     border-radius: 20px;
-    padding: 60px 10px;
-    font-size: 55px;
-    margin-top: 20px;
+    display: block;
+    margin: auto;
+}
+
+.final {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 25px;
 }
 </style>
 </head>
@@ -91,6 +104,8 @@ p {
 <body>
 
 <div class="game">
+
+<!-- START -->
 
 <div id="start" class="screen">
 
@@ -113,39 +128,44 @@ p {
 </div>
 
 
+<!-- LEVEL 1 -->
+
 <div id="level1" class="screen">
 
-<div class="progress">Уровень 1 / 6</div>
+<div class="progress">Уровень 1 / 7</div>
 
-<div class="hero">👩‍🦰</div>
+<div class="hero">💌</div>
 
 <h2>Странное сообщение</h2>
 
 <p>
-Утром ты находишь сообщение:
+Утром ты находишь сообщение.
 </p>
 
 <p>
-<b>«Сегодня тебя кое-что ждёт...»</b>
+<b>
+«Сегодня тебя кое-что ждёт...»
+</b>
 </p>
 
 <a class="button" href="#level2">
-Проверить 🔎
+Узнать больше 👀
 </a>
 
 </div>
 
 
+<!-- LEVEL 2 -->
+
 <div id="level2" class="screen">
 
-<div class="progress">Уровень 2 / 6</div>
+<div class="progress">Уровень 2 / 7</div>
 
-<div class="hero">🗺️</div>
+<div class="hero">🔎</div>
 
 <h2>Первая подсказка</h2>
 
 <p>
-Перед тобой три места.
 Где спрятана следующая подсказка?
 </p>
 
@@ -164,6 +184,8 @@ p {
 </div>
 
 
+<!-- WRONG -->
+
 <div id="wrong" class="screen">
 
 <div class="hero">😏</div>
@@ -171,27 +193,30 @@ p {
 <h2>Не здесь</h2>
 
 <p>
-Похоже, ты ошиблась.
+Кажется, ты пошла не туда.
+Но ничего страшного.
 Попробуй ещё раз.
 </p>
 
 <a class="button" href="#level2">
-Вернуться
+Вернуться 🔄
 </a>
 
 </div>
 
 
+<!-- LEVEL 3 -->
+
 <div id="level3" class="screen">
 
-<div class="progress">Уровень 3 / 6</div>
+<div class="progress">Уровень 3 / 7</div>
 
-<div class="hero">❤️</div>
+<div class="hero">🍕</div>
 
-<h2>Очень важный выбор</h2>
+<h2>Важный выбор</h2>
 
 <p>
-Как провести идеальный вечер?
+Как должен выглядеть идеальный вечер?
 </p>
 
 <a class="button" href="#level4">
@@ -209,10 +234,124 @@ p {
 </div>
 
 
+<!-- LEVEL 4 -->
+
 <div id="level4" class="screen">
 
-<div class="progress">Уровень 4 / 6</div>
+<div class="progress">Уровень 4 / 7</div>
 
 <div class="hero">🌙</div>
 
-<h2>Знакомый силуэт</h
+<h2>Знакомый силуэт</h2>
+
+<p>
+Вечер становится темнее.
+</p>
+
+<p>
+Ты идёшь дальше и замечаешь
+впереди знакомого человека.
+</p>
+
+<a class="button" href="#level5">
+Подойти ближе 👀
+</a>
+
+</div>
+
+
+<!-- LEVEL 5 -->
+
+<div id="level5" class="screen">
+
+<div class="progress">Уровень 5 / 7</div>
+
+<div class="hero">❤️</div>
+
+<h2>Кажется, это не случайность</h2>
+
+<p>
+Теперь становится понятно,
+что всё это было придумано специально.
+</p>
+
+<p>
+Но кто стоит за этой маленькой игрой?
+</p>
+
+<a class="button" href="#level6">
+Продолжить 🔥
+</a>
+
+</div>
+
+
+<!-- LEVEL 6 -->
+
+<div id="level6" class="screen">
+
+<div class="progress">Уровень 6 / 7</div>
+
+<div class="hero">💌</div>
+
+<h2>Последняя подсказка</h2>
+
+<p>
+Тебе протягивают конверт.
+</p>
+
+<p>
+Внутри всего одна надпись:
+</p>
+
+<p>
+<b>
+«Остался всего один шаг...»
+</b>
+</p>
+
+<a class="button" href="#level7">
+Открыть финал ❤️
+</a>
+
+</div>
+
+
+<!-- LEVEL 7 -->
+
+<div id="level7" class="screen">
+
+<div class="progress">Уровень 7 / 7</div>
+
+<div class="hero">❤️</div>
+
+<h2>Вот и разгадка</h2>
+
+<p>
+Ты дошла до самого конца.
+</p>
+
+<p>
+И теперь самое главное...
+</p>
+
+<div class="photo">
+
+<img src="IMG_20260824_173908.jpg" alt="Наша фотография">
+
+</div>
+
+<p class="final">
+Эта игра была создана специально для тебя. ❤️
+</p>
+
+<p>
+А настоящая история начинается только сейчас. 😉
+</p>
+
+</div>
+
+</div>
+
+</body>
+</html>
