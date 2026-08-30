@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Наше маленькое приключение ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    background: #ffe5ef;
+    font-family: Arial, sans-serif;
+    color: #3b2630;
+    text-align: center;
+}
+
+.game {
+    max-width: 500px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px 20px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+.screen {
+    display: none;
+}
+
+.screen:target {
+    display: block;
+}
+
+#start {
+    display: block;
+}
+
+.hero {
+    font-size: 85px;
+    margin: 20px 0;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.progress {
+    font-size: 13px;
+    opacity: .5;
+}
+
+.button {
+    display: block;
+    width: 85%;
+    margin: 15px auto;
+    padding: 16px;
+    background: #ff6f9f;
+    color: white;
+    text-decoration: none;
+    border-radius: 18px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.button:active {
+    transform: scale(.97);
+}
+
+.photo {
+    background: #f8dce7;
+    border-radius: 20px;
+    padding: 60px 10px;
+    font-size: 55px;
+    margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="game">
+
+<div id="start" class="screen">
+
+<div class="hero">👩‍🦰</div>
+
+<h1>Наше маленькое приключение ❤️</h1>
+
+<p>
+Кто-то оставил для тебя маленькую игру...
+</p>
+
+<p>
+Твоя задача — пройти её до самого конца.
+</p>
+
+<a class="button" href="#level1">
+Начать приключение ✨
+</a>
+
+</div>
+
+
+<div id="level1" class="screen">
+
+<div class="progress">Уровень 1 / 6</div>
+
+<div class="hero">👩‍🦰</div>
+
+<h2>Странное сообщение</h2>
+
+<p>
+Утром ты находишь сообщение:
+</p>
+
+<p>
+<b>«Сегодня тебя кое-что ждёт...»</b>
+</p>
+
+<a class="button" href="#level2">
+Проверить 🔎
+</a>
+
+</div>
+
+
+<div id="level2" class="screen">
+
+<div class="progress">Уровень 2 / 6</div>
+
+<div class="hero">🗺️</div>
+
+<h2>Первая подсказка</h2>
+
+<p>
+Перед тобой три места.
+Где спрятана следующая подсказка?
+</p>
+
+<a class="button" href="#wrong">
+Под деревом 🌳
+</a>
+
+<a class="button" href="#level3">
+За камнем 🪨
+</a>
+
+<a class="button" href="#wrong">
+В цветах 🌷
+</a>
+
+</div>
+
+
+<div id="wrong" class="screen">
+
+<div class="hero">😏</div>
+
+<h2>Не здесь</h2>
+
+<p>
+Похоже, ты ошиблась.
+Попробуй ещё раз.
+</p>
+
+<a class="button" href="#level2">
+Вернуться
+</a>
+
+</div>
+
+
+<div id="level3" class="screen">
+
+<div class="progress">Уровень 3 / 6</div>
+
+<div class="hero">❤️</div>
+
+<h2>Очень важный выбор</h2>
+
+<p>
+Как провести идеальный вечер?
+</p>
+
+<a class="button" href="#level4">
+Пиво 🍺
+</a>
+
+<a class="button" href="#level4">
+Ночная прогулка 🌙
+</a>
+
+<a class="button" href="#level4">
+Пицца 🍕
+</a>
+
+</div>
+
+
+<div id="level4" class="screen">
+
+<div class="progress">Уровень 4 / 6</div>
+
+<div class="hero">🌙</div>
+
+<h2>Знакомый силуэт</h
