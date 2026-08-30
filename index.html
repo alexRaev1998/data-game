@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Little Adventure ❤️</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ffd6e7, #fff0f6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #3a2530;
+    }
+
+    .game {
+        width: 92%;
+        max-width: 500px;
+        background: white;
+        border-radius: 25px;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    button {
+        border: none;
+        border-radius: 15px;
+        padding: 14px 22px;
+        margin: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        background: #ff6f9f;
+        color: white;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+    }
+
+    .heart {
+        font-size: 70px;
+        margin: 20px;
+    }
+
+    .character {
+        font-size: 80px;
+        margin: 20px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .choice {
+        background: #f5d9e4;
+        color: #3a2530;
+        width: 80%;
+    }
+
+    .success {
+        font-size: 50px;
+        margin: 15px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="game">
+
+    <!-- START -->
+    <div id="start">
+        <div class="heart">❤️</div>
+
+        <h1>Our Little Adventure</h1>
+
+        <p>
+            Somewhere between two ordinary people,
+            something slightly suspicious happened...
+        </p>
+
+        <button onclick="startGame()">START</button>
+    </div>
+
+
+    <!-- LEVEL 1 -->
+    <div id="level1" class="hidden">
+
+        <h1>Level 1</h1>
+
+        <div class="character">🧍‍♂️</div>
+
+        <p>
+            Our hero has one very important mission:
+            find the right person.
+        </p>
+
+        <button class="choice" onclick="level1Wrong()">
+            Go home 🏠
+        </button>
+
+        <button class="choice" onclick="level1Correct()">
+            Look for her ❤️
+        </button>
+
+        <p id="level1Message"></p>
+
+    </div>
+
+
+    <!-- LEVEL 2 -->
+    <div id="level2" class="hidden">
+
+        <h1>Level 2</h1>
+
+        <div class="character">🍺</div>
+
+        <p>
+            You found her.
+            Now the important question:
+            what should they do?
+        </p>
+
+        <button class="choice" onclick="level2Choice('beer')">
+            Have a beer 🍺
+        </button>
+
+        <button class="choice" onclick="level2Choice('walk')">
+            Go for a walk 🌙
+        </button>
+
+        <button class="choice" onclick="level2Choice('pizza')">
+            Get pizza 🍕
+        </button>
+
+        <p id="level2Message"></p>
+
+    </div>
+
+
+    <!-- LEVEL 3 -->
+    <div id="level3" class="hidden">
+
+        <h1>Final Level</h1>
+
+        <div class="character">👩‍❤️‍👨</div>
+
+        <p>
+            Everything seems to be going suspiciously well...
+        </p>
+
+        <p>
+            One final decision remains.
+        </p>
+
+        <button class="choice" onclick="finishGame()">
+            See what happens... 😉
+        </button>
+
+    </div>
+
+
+    <!-- END -->
+    <div id="end" class="hidden">
+
+        <div class="success">💖</div>
+
+        <h1>MISSION COMPLETE</h1>
+
+        <p>
+            Congratulations.
+        </p>
+
+        <p>
+            You have unlocked the next chapter.
+        </p>
+
+        <p>
+            And maybe...
+            just maybe...
+            it starts with a date. 🍺
+        </p>
+
+        <button onclick="restartGame()">
+            Play again
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function hideAll() {
+    document.getElementById("start").classList.add("hidden");
+    document.getElementById("level1").classList.add("hidden");
+    document.getElementById("level2").classList.add("hidden");
+    document.getElementById("level3").classList.add("hidden");
+    document.getElementById("end").classList.add("hidden");
+}
+
+function startGame() {
+    hideAll();
+    document.getElementById("level1").classList.remove("hidden");
+}
+
+function level1Wrong() {
+    document.getElementById("level1Message").innerText =
+        "Wrong decision. She might be waiting for you. 😏";
+}
+
+function level1Correct() {
+    hideAll();
+    document.getElementById("level2").classList.remove("hidden");
+}
+
+function level2Choice(choice) {
+
+    let message = "";
+
+    if (choice === "beer") {
+        message = "Excellent choice. +10 compatibility 🍺";
+    }
+
+    if (choice === "walk") {
+        message = "Cute. +8 compatibility 🌙";
+    }
+
+    if (choice === "pizza") {
+        message = "Very important decision. +9 compatibility 🍕";
+    }
+
+    document.getElementById("level2Message").innerText = message;
+
+    setTimeout(function() {
+        hideAll();
+        document.getElementById("level3").classList.remove("hidden");
+    }, 1200);
+}
+
+function finishGame() {
+    hideAll();
+    document.getElementById("end").classList.remove("hidden");
+}
+
+function restartGame() {
+    hideAll();
+    document.getElementById("start").classList.remove("hidden");
+}
+
+</script>
+
+</body>
+</html>
