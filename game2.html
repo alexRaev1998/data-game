@@ -4,45 +4,42 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Маленькое приключение ❤️</title>
+<title>Наше маленькое приключение ❤️</title>
 
 <style>
-* {
-    box-sizing: border-box;
-}
-
 body {
     margin: 0;
+    padding: 20px;
     min-height: 100vh;
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: #ffe5ef;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ffd6e7, #fff4f8);
     color: #3b2630;
+    text-align: center;
 }
 
 .game {
-    width: 100%;
-    max-width: 520px;
+    max-width: 500px;
+    margin: 30px auto;
     background: white;
-    padding: 25px 20px;
-    border-radius: 28px;
-    text-align: center;
-    box-shadow: 0 15px 40px rgba(0,0,0,.15);
+    padding: 30px 20px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
 }
 
 .screen {
     display: none;
 }
 
-.screen.active {
+.screen:target {
+    display: block;
+}
+
+#start {
     display: block;
 }
 
 .hero {
-    font-size: 90px;
+    font-size: 85px;
     margin: 20px 0;
 }
 
@@ -61,32 +58,31 @@ p {
 
 .progress {
     font-size: 13px;
-    opacity: .55;
+    opacity: .5;
 }
 
-button {
+.button {
     display: block;
-    width: 90%;
-    max-width: 360px;
-    margin: 12px auto;
+    width: 85%;
+    margin: 15px auto;
     padding: 16px;
-    border: 0;
-    border-radius: 18px;
     background: #ff6f9f;
     color: white;
+    text-decoration: none;
+    border-radius: 18px;
     font-size: 17px;
     font-weight: bold;
 }
 
-.message {
-    min-height: 25px;
-    margin: 15px;
-    font-weight: bold;
+.button:active {
+    transform: scale(.97);
 }
 
 .photo {
-    width: 100%;
+    background: #f8dce7;
     border-radius: 20px;
+    padding: 60px 10px;
+    font-size: 55px;
     margin-top: 20px;
 }
 </style>
@@ -96,346 +92,211 @@ button {
 
 <div class="game">
 
-<!-- START -->
+<div id="start" class="screen">
 
-<div id="start" class="screen active">
+<div class="hero">👩‍🦰</div>
 
-    <div class="hero">👩‍🦰</div>
+<h1>Наше маленькое приключение ❤️</h1>
 
-    <h1>Маленькое приключение ❤️</h1>
+<p>
+Кто-то оставил для тебя маленькую игру...
+</p>
 
-    <p>
-        Кто-то оставил для тебя маленькую игру.
-    </p>
+<p>
+Твоя задача — пройти её до самого конца.
+</p>
 
-    <p>
-        Твоя задача проста:
-        пройти её до самого конца.
-    </p>
-
-    <button id="startButton">
-        Начать приключение ✨
-    </button>
+<a class="button" href="#level1">
+Начать приключение ✨
+</a>
 
 </div>
 
-
-<!-- LEVEL 1 -->
 
 <div id="level1" class="screen">
 
-    <div class="progress">Уровень 1 / 6</div>
+<div class="progress">Уровень 1 / 6</div>
 
-    <div class="hero">👩‍🦰</div>
+<div class="hero">👩‍🦰</div>
 
-    <h2>Странное сообщение</h2>
+<h2>Странное сообщение</h2>
 
-    <p>
-        Утром ты находишь сообщение:
-    </p>
+<p>
+Утром ты находишь сообщение:
+</p>
 
-    <p>
-        <b>«Сегодня тебя кое-что ждёт...»</b>
-    </p>
+<p>
+<b>«Сегодня тебя кое-что ждёт...»</b>
+</p>
 
-    <p>
-        Что будешь делать?
-    </p>
-
-    <button id="level1Button">
-        Конечно, проверить 🔎
-    </button>
+<a class="button" href="#level2">
+Проверить 🔎
+</a>
 
 </div>
 
-
-<!-- LEVEL 2 -->
 
 <div id="level2" class="screen">
 
-    <div class="progress">Уровень 2 / 6</div>
+<div class="progress">Уровень 2 / 6</div>
 
-    <div class="hero">🗺️</div>
+<div class="hero">🗺️</div>
 
-    <h2>Первая подсказка</h2>
+<h2>Первая подсказка</h2>
 
-    <p>
-        Ты находишь три места,
-        где может быть следующая подсказка.
-    </p>
+<p>
+Перед тобой три места.
+Где спрятана следующая подсказка?
+</p>
 
-    <button id="wrongButton">
-        Под деревом 🌳
-    </button>
+<a class="button" href="#wrong">
+Под деревом 🌳
+</a>
 
-    <button id="correctButton">
-        За камнем 🪨
-    </button>
+<a class="button" href="#level3">
+За камнем 🪨
+</a>
 
-    <button id="wrongButton2">
-        В цветах 🌷
-    </button>
-
-    <div id="level2Message" class="message"></div>
+<a class="button" href="#wrong">
+В цветах 🌷
+</a>
 
 </div>
 
 
-<!-- LEVEL 3 -->
+<div id="wrong" class="screen">
+
+<div class="hero">😏</div>
+
+<h2>Не здесь</h2>
+
+<p>
+Похоже, ты ошиблась.
+Попробуй ещё раз.
+</p>
+
+<a class="button" href="#level2">
+Вернуться
+</a>
+
+</div>
+
 
 <div id="level3" class="screen">
 
-    <div class="progress">Уровень 3 / 6</div>
+<div class="progress">Уровень 3 / 6</div>
 
-    <div class="hero">❤️</div>
+<div class="hero">❤️</div>
 
-    <h2>Очень важный выбор</h2>
+<h2>Очень важный выбор</h2>
 
-    <p>
-        В подсказке написано:
-    </p>
+<p>
+Как провести идеальный вечер?
+</p>
 
-    <p>
-        <b>
-        «Выбери то, что сделало бы этот вечер лучше».
-        </b>
-    </p>
+<a class="button" href="#level4">
+Пиво 🍺
+</a>
 
-    <button id="beerButton">
-        Пиво 🍺
-    </button>
+<a class="button" href="#level4">
+Ночная прогулка 🌙
+</a>
 
-    <button id="walkButton">
-        Ночная прогулка 🌙
-    </button>
-
-    <button id="pizzaButton">
-        Пицца 🍕
-    </button>
-
-    <div id="level3Message" class="message"></div>
+<a class="button" href="#level4">
+Пицца 🍕
+</a>
 
 </div>
 
-
-<!-- LEVEL 4 -->
 
 <div id="level4" class="screen">
 
-    <div class="progress">Уровень 4 / 6</div>
+<div class="progress">Уровень 4 / 6</div>
 
-    <div class="hero">🌙</div>
+<div class="hero">🌙</div>
 
-    <h2>Знакомый силуэт</h2>
+<h2>Знакомый силуэт</h2>
 
-    <p>
-        Вечер продолжается.
-    </p>
+<p>
+Вечер становится темнее.
+</p>
 
-    <p>
-        Ты идёшь по улице и замечаешь
-        впереди знакомого человека.
-    </p>
+<p>
+Ты идёшь по улице и замечаешь
+впереди знакомого человека.
+</p>
 
-    <button id="level4Button">
-        Подойти ближе 👀
-    </button>
+<a class="button" href="#level5">
+Подойти ближе 👀
+</a>
 
 </div>
 
-
-<!-- LEVEL 5 -->
 
 <div id="level5" class="screen">
 
-    <div class="progress">Уровень 5 / 6</div>
+<div class="progress">Уровень 5 / 6</div>
 
-    <div class="hero">💌</div>
+<div class="hero">💌</div>
 
-    <h2>Последняя подсказка</h2>
+<h2>Последняя подсказка</h2>
 
-    <p>
-        Человек протягивает тебе конверт.
-    </p>
+<p>
+Человек протягивает тебе конверт.
+</p>
 
-    <p>
-        Внутри написано:
-    </p>
+<p>
+Внутри написано:
+</p>
 
-    <p>
-        <b>
-        «Если ты дошла сюда,
-        значит, всё получилось.»
-        </b>
-    </p>
+<p>
+<b>
+«Если ты дошла сюда,
+значит, всё получилось.»
+</b>
+</p>
 
-    <button id="level5Button">
-        Открыть последнюю страницу ❤️
-    </button>
+<a class="button" href="#level6">
+Открыть ❤️
+</a>
 
 </div>
 
-
-<!-- LEVEL 6 -->
 
 <div id="level6" class="screen">
 
-    <div class="progress">Уровень 6 / 6</div>
+<div class="progress">Уровень 6 / 6</div>
 
-    <div class="hero">❤️</div>
+<div class="hero">❤️</div>
 
-    <h2>Вот и разгадка</h2>
+<h2>Вот и разгадка</h2>
 
-    <p>
-        На самом деле всё это время
-        игру готовил один человек.
-    </p>
+<p>
+Ты дошла до конца.
+</p>
 
-    <p>
-        <b>
-        Он хотел просто подарить тебе
-        маленькое приключение.
-        </b>
-    </p>
+<p>
+Теперь ты знаешь,
+кто всё это придумал.
+</p>
 
-    <div>
-        <div style="
-        background:#f7dce7;
-        border-radius:20px;
-        padding:65px 10px;
-        font-size:55px;
-        ">
-        📸
-        </div>
-    </div>
+<div class="photo">
+📸
+</div>
 
-    <p>
-        <b>
-        Здесь появится ваша фотография ❤️
-        </b>
-    </p>
+<p>
+<b>
+Здесь появится ваша фотография ❤️
+</b>
+</p>
 
-    <p>
-        А дальше начинается уже настоящая история.
-    </p>
+<p>
+А настоящая история начинается только сейчас.
+</p>
 
 </div>
 
 </div>
-
-
-<script>
-
-document.addEventListener("DOMContentLoaded", function() {
-
-    function showScreen(id) {
-
-        var screens = document.querySelectorAll(".screen");
-
-        screens.forEach(function(screen) {
-            screen.classList.remove("active");
-        });
-
-        var screen = document.getElementById(id);
-
-        if (screen) {
-            screen.classList.add("active");
-        }
-
-        window.scrollTo(0, 0);
-    }
-
-
-    document.getElementById("startButton").addEventListener("click", function() {
-
-        showScreen("level1");
-
-    });
-
-
-    document.getElementById("level1Button").addEventListener("click", function() {
-
-        showScreen("level2");
-
-    });
-
-
-    document.getElementById("wrongButton").addEventListener("click", function() {
-
-        document.getElementById("level2Message").textContent =
-        "Нет, здесь ничего нет 😏";
-
-    });
-
-
-    document.getElementById("wrongButton2").addEventListener("click", function() {
-
-        document.getElementById("level2Message").textContent =
-        "Почти... но не здесь 😏";
-
-    });
-
-
-    document.getElementById("correctButton").addEventListener("click", function() {
-
-        document.getElementById("level2Message").textContent =
-        "Нашла! ❤️";
-
-        setTimeout(function() {
-            showScreen("level3");
-        }, 800);
-
-    });
-
-
-    function eveningChoice(text) {
-
-        document.getElementById("level3Message").textContent = text;
-
-        setTimeout(function() {
-            showScreen("level4");
-        }, 900);
-
-    }
-
-
-    document.getElementById("beerButton").addEventListener("click", function() {
-
-        eveningChoice("Хороший выбор 🍺");
-
-    });
-
-
-    document.getElementById("walkButton").addEventListener("click", function() {
-
-        eveningChoice("Романтично 🌙");
-
-    });
-
-
-    document.getElementById("pizzaButton").addEventListener("click", function() {
-
-        eveningChoice("С этим выбором невозможно спорить 🍕");
-
-    });
-
-
-    document.getElementById("level4Button").addEventListener("click", function() {
-
-        showScreen("level5");
-
-    });
-
-
-    document.getElementById("level5Button").addEventListener("click", function() {
-
-        showScreen("level6");
-
-    });
-
-});
-
-</script>
 
 </body>
 </html>
