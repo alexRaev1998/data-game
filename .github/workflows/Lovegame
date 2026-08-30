@@ -518,6 +518,24 @@ function chooseEvening(choice) {
         showLevel("level7");
     }, 1000);
 }
+function showLevel(levelId) {
+    var currentLevel = document.getElementById(levelId);
+    if (levelId === "level7") {
+        var img = document.createElement("img");
+        img.src = "IMG_20260824_173908.jpg";
+        img.style.width = "100%";
+        img.style.maxWidth = "500px";
+        img.style.display = "block";
+        img.style.margin = "20px auto";
+        img.style.borderRadius = "12px";
+        img.style.boxShadow = "0 4px 15px rgba(0,0,0,0.2)";
+        if (currentLevel) {
+            currentLevel.appendChild(img);
+        } else {
+            document.body.appendChild(img);
+        }
+    }
+}
 
 </script>
 
