@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Наше маленькое приключение ❤️</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #fff4f8);
+    color: #3b2630;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.game {
+    width: 100%;
+    max-width: 520px;
+    background: white;
+    border-radius: 28px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.hero {
+    font-size: 90px;
+    margin: 20px 0;
+}
+
+button {
+    display: block;
+    width: 90%;
+    max-width: 360px;
+    margin: 12px auto;
+    padding: 16px;
+    border: none;
+    border-radius: 18px;
+    background: #ff6f9f;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.progress {
+    font-size: 13px;
+    opacity: 0.55;
+}
+
+.message {
+    min-height: 25px;
+    margin: 15px;
+    font-weight: bold;
+}
+
+.photo-placeholder {
+    background: #f7dce7;
+    border-radius: 20px;
+    padding: 60px 15px;
+    font-size: 60px;
+    margin: 20px 0;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="game">
+
+
+<!-- START -->
+
+<section id="start" class="screen active">
+
+<div class="hero">👩‍🦰</div>
+
+<h1>Наше маленькое приключение ❤️</h1>
+
+<p>
+Кто-то оставил для тебя одну странную игру...
+</p>
+
+<p>
+Ты ещё не знаешь, куда она тебя приведёт.
+</p>
+
+<p>
+Но если ты уже здесь —
+почему бы не попробовать?
+</p>
+
+<button type="button" onclick="showLevel('level1')">
+Начать приключение ✨
+</button>
+
+</section>
+
+
+<!-- LEVEL 1 -->
+
+<section id="level1" class="screen">
+
+<div class="progress">Уровень 1 / 10</div>
+
+<div class="hero">👩‍🦰</div>
+
+<h2>Неожиданное утро</h2>
+
+<p>
+Ты просыпаешься и видишь сообщение:
+</p>
+
+<p>
+<b>«Сегодня тебя кое-что ждёт...»</b>
+</p>
+
+<button type="button" onclick="showLevel('level2')">
+Проверить 🔎
+</button>
+
+<button type="button" onclick="sleepAway()">
+Сделать вид, что ничего не было 😴
+</button>
+
+<div id="message1" class="message"></div>
+
+</section>
+
+
+<!-- LEVEL 2 -->
+
+<section id="level2" class="screen">
+
+<div class="progress">Уровень 2 / 10</div>
+
+<div class="hero">🗺️</div>
+
+<h2>Два пути</h2>
+
+<p>
+Перед тобой две дороги.
+</p>
+
+<p>
+Одна спокойная, другая подозрительно интересная.
+</p>
+
+<button type="button" onclick="showLevel('level3')">
+Подозрительно интересная 😏
+</button>
+
+<button type="button" onclick="showLevel('level3')">
+Спокойная 🌸
+</button>
+
+</section>
+
+
+<!-- LEVEL 3 -->
+
+<section id="level3" class="screen">
+
+<div class="progress">Уровень 3 / 10</div>
+
+<div class="hero">❤️</div>
+
+<h2>Потерянное сердце</h2>
+
+<p>
+Где-то здесь спрятано сердце.
+</p>
+
+<p>
+Найди его.
+</p>
+
+<button type="button" onclick="findHeart(1)">
+Под деревом 🌳
+</button>
+
+<button type="button" onclick="findHeart(2)">
+За камнем 🪨
+</button>
+
+<button type="button" onclick="findHeart(3)">
+В цветах 🌷
+</button>
+
+<div id="message3" class="message"></div>
+
+</section>
+
+
+<!-- LEVEL 4 -->
+
+<section id="level4" class="screen">
+
+<div class="progress">Уровень 4 / 10</div>
+
+<div class="hero">🚪</div>
+
+<h2>Таинственная дверь</h2>
+
+<p>
+Перед тобой закрытая дверь.
+</p>
+
+<p>
+На ней написано:
+</p>
+
+<p>
+<b>
+«Открой — и узнаешь немного больше.»
+</b>
+</p>
+
+<button type="button" onclick="showLevel('level5')">
+Открыть 🚪
+</button>
+
+</section>
+
+
+<!-- LEVEL 5 -->
+
+<section id="level5" class="screen">
+
+<div class="progress">Уровень 5 / 10</div>
+
+<div class="hero">💌</div>
+
+<h2>Письмо</h2>
+
+<p>
+За дверью лежит маленький конверт.
+</p>
+
+<p>
+Внутри написано:
+</p>
+
+<p>
+<b>
+«Некоторые истории начинаются совершенно неожиданно.»
+</b>
+</p>
+
+<button type="button" onclick="showLevel('level6')">
+Продолжить ❤️
+</button>
+
+</section>
+
+
+<!-- LEVEL 6 -->
+
+<section id="level6" class="screen">
+
+<div class="progress">Уровень 6 / 10</div>
+
+<div class="hero">🍺</div>
+
+<h2>Очень важный выбор</h2>
+
+<p>
+Представь идеальный вечер.
+</p>
+
+<p>
+Что выбираешь?
+</p>
+
+<button type="button" onclick="chooseEvening('beer')">
+Пиво 🍺
+</button>
+
+<button type="button" onclick="chooseEvening('walk')">
+Ночная прогулка 🌙
+</button>
+
+<button type="button" onclick="chooseEvening('pizza')">
+Пицца 🍕
+</button>
+
+<div id="message6" class="message"></div>
+
+</section>
+
+
+<!-- LEVEL 7 -->
+
+<section id="level7" class="screen">
+
+<div class="progress">Уровень 7 / 10</div>
+
+<div class="hero">🌙</div>
+
+<h2>Ночной город</h2>
+
+<p>
+Уже темно.
+</p>
+
+<p>
+Ты идёшь по тихой улице.
+</p>
+
+<p>
+И замечаешь впереди знакомый силуэт...
+</p>
+
+<button type="button" onclick="showLevel('level8')">
+Подойти ближе 👀
+</button>
+
+</section>
+
+
+<!-- LEVEL 8 -->
+
+<section id="level8" class="screen">
+
+<div class="progress">Уровень 8 / 10</div>
+
+<div class="hero">🧍‍♂️</div>
+
+<h2>Знакомый силуэт</h2>
+
+<p>
+Ты подходишь ближе...
+</p>
+
+<p>
+И теперь уже невозможно ошибиться.
+</p>
+
+<p>
+Ты узнаёшь человека перед собой.
+</p>
+
+<button type="button" onclick="showLevel('level9')">
+Подойти ещё ближе ❤️
+</button>
+
+</section>
+
+
+<!-- LEVEL 9 -->
+
+<section id="level9" class="screen">
+
+<div class="progress">Уровень 9 / 10</div>
+
+<div class="hero">💌</div>
+
+<h2>Теперь всё понятно</h2>
+
+<p>
+Все эти загадки, дороги и сообщения
+были здесь не просто так.
+</p>
+
+<p>
+Кто-то очень хотел,
+чтобы ты дошла именно сюда.
+</p>
+
+<button type="button" onclick="showLevel('level10')">
+Узнать, кто это сделал 👀
+</button>
+
+</section>
+
+
+<!-- LEVEL 10 -->
+
+<section id="level10" class="screen">
+
+<div class="progress">Уровень 10 / 10</div>
+
+<div class="hero">❤️</div>
+
+<h2>Вот и разгадка...</h2>
+
+<p>
+Ты дошла до самого конца.
+</p>
+
+<p>
+И теперь самое главное.
+</p>
+
+<div class="photo-placeholder">
+📸
+</div>
+
+<p>
+<b>
+Эта игра была создана специально для тебя.
+</b>
+</p>
+
+<p>
+А настоящая история начинается только сейчас. ❤️
+</p>
+
+</section>
+
+
+</div>
+
+
+<script>
+
+function showLevel(id) {
+
+    document.querySelectorAll(".screen").forEach(function(screen) {
+        screen.classList.remove("active");
+    });
+
+    var nextScreen = document.getElementById(id);
+
+    if (nextScreen) {
+        nextScreen.classList.add("active");
+        window.scrollTo(0, 0);
+    }
+}
+
+
+function sleepAway() {
+
+    document.getElementById("message1").textContent =
+    "Не получится 😴 Любопытство победило.";
+
+    setTimeout(function() {
+        showLevel("level2");
+    }, 1200);
+}
+
+
+function findHeart(number) {
+
+    var message = document.getElementById("message3");
+
+    if (number === 2) {
+
+        message.textContent = "Нашла! ❤️";
+
+        setTimeout(function() {
+            showLevel("level4");
+        }, 900);
+
+    } else {
+
+        message.textContent =
+        "Здесь ничего нет... попробуй ещё 😏";
+    }
+}
+
+
+function chooseEvening(choice) {
+
+    var message = document.getElementById("message6");
+
+    if (choice === "beer") {
+        message.textContent = "Хороший выбор. 🍺";
+    }
+
+    if (choice === "walk") {
+        message.textContent = "Очень романтично. 🌙";
+    }
+
+    if (choice === "pizza") {
+        message.textContent = "С этим выбором сложно спорить. 🍕";
+    }
+
+    setTimeout(function() {
+        showLevel("level7");
+    }, 1000);
+}
+
+</script>
+
+</body>
+</html>
