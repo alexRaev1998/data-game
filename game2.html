@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Little Adventure ❤️</title>
+
+<title>Маленькое приключение ❤️</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -13,23 +15,29 @@
 body {
     margin: 0;
     min-height: 100vh;
+    background: linear-gradient(135deg, #ffd6e7, #fff4f8);
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ffd6e7, #fff1f7);
-    color: #3b2630;
+    color: #3d2931;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     padding: 15px;
 }
 
 .game {
     width: 100%;
     max-width: 520px;
-    min-height: 560px;
-    background: rgba(255,255,255,0.96);
-    border-radius: 28px;
+
+    background: white;
+
+    border-radius: 30px;
+
     padding: 25px 20px;
+
     text-align: center;
+
     box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
@@ -43,11 +51,10 @@ body {
 
 h1 {
     font-size: 30px;
-    margin-top: 10px;
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 25px;
 }
 
 p {
@@ -57,20 +64,30 @@ p {
 
 .hero {
     font-size: 100px;
-    margin: 25px 0;
+    margin: 20px 0;
 }
 
 button {
     display: block;
+
     width: 90%;
-    max-width: 350px;
+
+    max-width: 360px;
+
     margin: 12px auto;
-    padding: 15px;
+
+    padding: 16px;
+
     border: none;
-    border-radius: 18px;
+
+    border-radius: 20px;
+
     background: #ff6f9f;
+
     color: white;
+
     font-size: 17px;
+
     font-weight: bold;
 }
 
@@ -78,70 +95,64 @@ button:active {
     transform: scale(0.97);
 }
 
-.small {
-    font-size: 14px;
-    opacity: 0.7;
+.progress {
+    font-size: 13px;
+    opacity: 0.55;
 }
 
 .message {
-    min-height: 30px;
+    min-height: 25px;
     margin: 15px;
+
     font-weight: bold;
 }
 
-.progress {
-    font-size: 13px;
-    opacity: 0.6;
-    margin-bottom: 15px;
-}
+.photo {
+    width: 100%;
+    max-height: 350px;
 
-.heart {
-    font-size: 70px;
-    margin: 20px;
-}
+    object-fit: cover;
 
-.photo-placeholder {
-    width: 90%;
-    height: 260px;
+    border-radius: 22px;
+
+    display: none;
+
     margin: 20px auto;
-    border-radius: 20px;
-    background: #f5dce6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 60px;
 }
+
 </style>
+
 </head>
 
 <body>
 
 <div class="game">
 
+
 <!-- START -->
 
 <div id="start" class="screen active">
 
-    <div class="heart">❤️</div>
+    <div class="hero">👩‍🦰</div>
 
-    <h1>Our Little Adventure</h1>
+    <h1>Маленькое приключение ❤️</h1>
 
     <p>
-        Someone left you a mysterious little game...
+        Кто-то оставил для тебя одну странную игру.
     </p>
 
     <p>
-        Your mission is simple:
-        follow the story and see where it takes you.
+        Никто не знает, чем всё закончится.
     </p>
 
-    <button onclick="goTo('level1')">
-        Start the adventure
+    <p>
+        Но если ты уже здесь...
+        почему бы не попробовать?
+    </p>
+
+    <button onclick="go('level1')">
+        Начать приключение ✨
     </button>
-
-    <p class="small">
-        Warning: unexpected cuteness may occur.
-    </p>
 
 </div>
 
@@ -150,14 +161,158 @@ button:active {
 
 <div id="level1" class="screen">
 
-    <div class="progress">Level 1 / 10</div>
-
-    <h2>The Beginning</h2>
+    <div class="progress">Уровень 1 / 10</div>
 
     <div class="hero">👩‍🦰</div>
 
+    <h2>Неожиданное утро</h2>
+
     <p>
-        You wake up and discover a strange message:
+        Ты просыпаешься и видишь сообщение:
     </p>
 
-    <
+    <p>
+        <b>«Сегодня тебя кое-что ждёт...»</b>
+    </p>
+
+    <button onclick="go('level2')">
+        Конечно, проверить 🔎
+    </button>
+
+    <button onclick="lazy()">
+        Сделать вид, что ничего не было 😴
+    </button>
+
+    <div id="m1" class="message"></div>
+
+</div>
+
+
+<!-- LEVEL 2 -->
+
+<div id="level2" class="screen">
+
+    <div class="progress">Уровень 2 / 10</div>
+
+    <div class="hero">🗺️</div>
+
+    <h2>Два пути</h2>
+
+    <p>
+        Перед тобой две дороги.
+    </p>
+
+    <p>
+        Одна выглядит безопасной.
+        Вторая выглядит подозрительно интересной.
+    </p>
+
+    <button onclick="go('level3')">
+        Подозрительно интересная 😏
+    </button>
+
+    <button onclick="go('level3')">
+        Безопасная 🌸
+    </button>
+
+</div>
+
+
+<!-- LEVEL 3 -->
+
+<div id="level3" class="screen">
+
+    <div class="progress">Уровень 3 / 10</div>
+
+    <div class="hero">❤️</div>
+
+    <h2>Потерянное сердце</h2>
+
+    <p>
+        Где-то здесь спрятано сердце.
+    </p>
+
+    <p>
+        Найди его.
+    </p>
+
+    <button onclick="heart(1)">
+        Под деревом 🌳
+    </button>
+
+    <button onclick="heart(2)">
+        За камнем 🪨
+    </button>
+
+    <button onclick="heart(3)">
+        В цветах 🌷
+    </button>
+
+    <div id="m3" class="message"></div>
+
+</div>
+
+
+<!-- LEVEL 4 -->
+
+<div id="level4" class="screen">
+
+    <div class="progress">Уровень 4 / 10</div>
+
+    <div class="hero">🚪</div>
+
+    <h2>Таинственная дверь</h2>
+
+    <p>
+        Перед тобой дверь.
+    </p>
+
+    <p>
+        На ней написано:
+    </p>
+
+    <p>
+        <b>«Открыть — значит узнать больше.»</b>
+    </p>
+
+    <button onclick="go('level5')">
+        Открыть 🚪
+    </button>
+
+</div>
+
+
+<!-- LEVEL 5 -->
+
+<div id="level5" class="screen">
+
+    <div class="progress">Уровень 5 / 10</div>
+
+    <div class="hero">💌</div>
+
+    <h2>Письмо</h2>
+
+    <p>
+        За дверью лежит конверт.
+    </p>
+
+    <p>
+        Внутри всего одна фраза:
+    </p>
+
+    <p>
+        <b>
+        «Некоторые встречи начинаются задолго до первого свидания.»
+        </b>
+    </p>
+
+    <button onclick="go('level6')">
+        Интересно... продолжить ❤️
+    </button>
+
+</div>
+
+
+<!-- LEVEL 6 -->
+
+<div id="
