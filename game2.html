@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Little Adventure ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #fff1f7);
+    color: #3b2630;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.game {
+    width: 100%;
+    max-width: 520px;
+    min-height: 560px;
+    background: rgba(255,255,255,0.96);
+    border-radius: 28px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+h1 {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.hero {
+    font-size: 100px;
+    margin: 25px 0;
+}
+
+button {
+    display: block;
+    width: 90%;
+    max-width: 350px;
+    margin: 12px auto;
+    padding: 15px;
+    border: none;
+    border-radius: 18px;
+    background: #ff6f9f;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.small {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.message {
+    min-height: 30px;
+    margin: 15px;
+    font-weight: bold;
+}
+
+.progress {
+    font-size: 13px;
+    opacity: 0.6;
+    margin-bottom: 15px;
+}
+
+.heart {
+    font-size: 70px;
+    margin: 20px;
+}
+
+.photo-placeholder {
+    width: 90%;
+    height: 260px;
+    margin: 20px auto;
+    border-radius: 20px;
+    background: #f5dce6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="game">
+
+<!-- START -->
+
+<div id="start" class="screen active">
+
+    <div class="heart">❤️</div>
+
+    <h1>Our Little Adventure</h1>
+
+    <p>
+        Someone left you a mysterious little game...
+    </p>
+
+    <p>
+        Your mission is simple:
+        follow the story and see where it takes you.
+    </p>
+
+    <button onclick="goTo('level1')">
+        Start the adventure
+    </button>
+
+    <p class="small">
+        Warning: unexpected cuteness may occur.
+    </p>
+
+</div>
+
+
+<!-- LEVEL 1 -->
+
+<div id="level1" class="screen">
+
+    <div class="progress">Level 1 / 10</div>
+
+    <h2>The Beginning</h2>
+
+    <div class="hero">👩‍🦰</div>
+
+    <p>
+        You wake up and discover a strange message:
+    </p>
+
+    <
